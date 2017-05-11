@@ -33,7 +33,6 @@ export COMPOSE_PROJECT_NAME="$DEPLOY_NS"
 export DOCKER_USER="example"
 echo "Deploying to: $DEPLOY_NS"
 
-ln -fs .env-$ENV .env
 
 if [ "$HOST" == "local" ]; then
   # local deploy
@@ -41,7 +40,6 @@ if [ "$HOST" == "local" ]; then
   docker-compose down -v
   docker-compose up --no-build -d
 
-  ln -fs .env-dev .env
   exit
 fi
 
@@ -62,8 +60,6 @@ docker-compose push
   docker-compose up --no-build -d
   docker system prune -f
 )
-
-ln -fs .env-dev .env
 
 git tag ${DEPLOY_NS}__$(date +"%Y%m%d-%H%M%S")
 git push --tags upstream
