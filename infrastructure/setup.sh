@@ -8,7 +8,7 @@ if [ -z "$DOCKER_MACHINE_NAME" ]; then
 fi
 
 # Change it to your Docker Hub user
-export DOCKER_USER="peterleonov"
+export DOCKER_USER="example"
 export COMPOSE_FILE="infrastructure.yml"
 
 # Builds locally to save cloud resources and initial context transmission
