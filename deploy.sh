@@ -40,7 +40,7 @@ docker-compose push
 (
   # Sets the machine's Docker Daemon as the current one
   eval $(docker-machine env --shell bash $DOCKER_MACHINE_NAME)
-  if [ -z "$DIRECTOR_VARIANT" ]; then
+  if [ -z "$DOCKER_MACHINE_NAME" ]; then
     echo "Empty DOCKER_MACHINE_NAME" >&2
     echo "Failed to set environment variables for docker machine $DOCKER_MACHINE_NAME" >&2
     exit 20
