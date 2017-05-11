@@ -9,7 +9,7 @@ if [ -z "$DOCKER_MACHINE_NAME" ]; then
 fi
 
 # The environment variables file to use as a base for services
-DEPLOYMENT_ENV=$2
+export DEPLOYMENT_ENV=$2
 if [ -z "$DEPLOYMENT_ENV" ]; then
   echo Define DEPLOYMENT_ENV
   exit 11

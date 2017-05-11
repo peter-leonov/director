@@ -1,5 +1,7 @@
 version: '3'
 
+env_file: ${DEPLOYMENT_ENV}.env
+
 services:
   # This one is here just for demo purpose.
   # notice that the tag has DEPLOY_NS variable in it
