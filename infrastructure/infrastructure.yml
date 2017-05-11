@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  # useful for AWS to terminate HTTPS on a load balancer
+  # just point you HTTPS group to the docker machine / swarn on port 90
+  http2https:
+    build: http2https
+    image: ${DOCKER_USER}/infrastructure:http2https
+    ports:
+      - '90:90'
+    restart: always
+
+  # the reverse proxy aware of containters in `versions` network
+  director:
+    build: director
+    image: ${DOCKER_USER}/infrastructure:director
+    ports:
+      - '80:80'
+    networks:
+      versions:
+    restart: always
+
+networks:
+  versions:
+    external: true

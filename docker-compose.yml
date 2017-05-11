@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  # This one is here just for demo purpose.
+  # notice that the tag has DEPLOY_NS variable in it
+  # This is to prevent collisions if two people deploy
+  # the same container the same time
+  # but with different version inside.
+  app:
+    build:
+      context: ./app
+    image: ${DOCKER_USER}/versions:${DEPLOY_NS}-app
+    volumes:
+      - 'build:/app/build/'
+
+  # one of the services shoul listen on 80 port
+  # in this example configureation it is the `web` service
+  web:
+    build: ./web
+    image: ${DOCKER_USER}/versions:${DEPLOY_NS}-web
+    depends_on:
+      - app
+    networks:
+      versions:
+        aliases:
+         - '${VARIANT}'
+    volumes:
+    restart: always
+
+networks:
+  versions:
+    external: true
