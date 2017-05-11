@@ -3,6 +3,7 @@ This is a template project for those who want to have a simple docker environmen
 More in a separate inspiring article: [why.md](why.md).
 
 
+
 # Initial setup
 
 ## Docker
@@ -33,6 +34,7 @@ To test if the infrastructure has been correctly set up, run this:
     curl -i http://$TEST_MACHINE_IP:80/
 
 First one (on port `90`) should redirect you to `https://%IP%` and second one (on port `80`) should redirect to `https://www.example.com/`.
+
 
 
 # Deploy
