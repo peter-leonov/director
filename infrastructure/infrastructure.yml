@@ -10,16 +10,16 @@ services:
       - '90:90'
     restart: always
 
-  # the reverse proxy aware of containters in `versions` network
+  # the reverse proxy aware of containters in `director_versions` network
   director:
     build: director
     image: ${DOCKER_USER}/infrastructure:director
     ports:
       - '80:80'
     networks:
-      versions:
+      director_versions:
     restart: always
 
 networks:
-  versions:
+  director_versions:
     external: true

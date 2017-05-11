@@ -30,5 +30,5 @@ services:
     restart: always
 
 networks:
-  versions:
+  director_versions:
     external: true

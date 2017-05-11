@@ -26,7 +26,7 @@ docker-compose push
   fi
   # The `docker network create` command is not indepotent
   # so ignoring errors on second run
-  docker network create versions || true
+  docker network create director_versions || true
   # Pulling and running
   docker-compose pull
   docker-compose up --no-build -d
