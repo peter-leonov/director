@@ -33,18 +33,6 @@ export COMPOSE_PROJECT_NAME="$DEPLOY_NS"
 export DOCKER_USER="example"
 echo "Deploying to: $DEPLOY_NS"
 
-
-if [ "$HOST" == "local" ]; then
-  # local deploy
-  docker-compose build
-  docker-compose down -v
-  docker-compose up --no-build -d
-
-  exit
-fi
-
-# remote deploy
-
 docker-compose build
 docker-compose push
 
