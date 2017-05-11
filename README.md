@@ -43,6 +43,8 @@ As simple as:
 
 where `XXXX` is any version name / number you like, for ex. `v123` for a Jira ticket PN-123.
 
+To raclaim disk space used by old garbage containers and images run from time to time this command: `docker system prune -f`. It might remove something useful which you do not expect, so first, please, make sure you know what this command is doing.
+
 
 
 # Fin!

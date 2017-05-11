@@ -39,7 +39,6 @@ docker-compose push
 
   docker-compose down -v
   docker-compose up --no-build -d
-  docker system prune -f
 )
 
 git tag ${DEPLOY_NS}__$(date +"%Y%m%d-%H%M%S")
