@@ -34,10 +34,7 @@ docker-compose push
   docker-machine env --shell bash $HOST > .docker-machine-env-$HOST
   eval $(cat .docker-machine-env-$HOST)
 
-  docker volume create --name=event_logs
   docker-compose pull
-
-  docker-compose down -v
   docker-compose up --no-build -d
 )
 
