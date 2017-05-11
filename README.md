@@ -26,6 +26,13 @@ To set up infrastructure run `./setup.sh MACHINE_NAME`. This will create a share
     cd infrastructure
     ./setup.sh test-machine
 
+To test if the infrastructure has been correctly set up, run this:
+
+    export TEST_MACHINE_IP=$(docker-machine ip test-machine)
+    curl -i http://$TEST_MACHINE_IP:90/
+    curl -i http://$TEST_MACHINE_IP:80/
+
+First one (on port `90`) should redirect you to `https://%IP%` and second one (on port `80`) should redirect to `https://www.example.com/`.
 
 
 # Deploy
