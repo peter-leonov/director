@@ -3,13 +3,6 @@ set -e
 
 COMMENT AS HELL
 
-# deploy clean commits only
-if [[ -n $(git status -s) ]]; then
-  echo Working directory is not clean.
-  echo Do git commit or git reset --hard
-  exit 1
-fi
-
 export HOST=$1
 export ENV=$2
 export VARIANT=$3
