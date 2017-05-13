@@ -57,6 +57,8 @@ If the deploy script run successfully test the variant with:
     # for demo / pn123
     curl -i -H 'Host: pn123.demo.example.com' http://$TEST_MACHINE_IP/
 
+The idea of this whole project is that you now can run both `production` and `pn123` simultaneously. Or more, if you machine / swarm permits.
+
 If you do not want to use the `TEST_MACHINE_IP` variable every time and also would like to test you App in browser (for whatever reason) just add the IP to your `/etc/hosts` like this:
 
     192.168.99.100 example.com www.example.com pn123.demo.example.com
