@@ -55,7 +55,7 @@ docker-compose push
 
 # Notifies other team members of what has been deployed
 git tag ${DEPLOY_NS}__$(date +"%Y%m%d-%H%M%S")
-git push --tags upstream
+git push --tags
 
 # Success!
 echo "Deployed OK to: $DEPLOY_NS"
