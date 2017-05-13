@@ -45,16 +45,23 @@ As simple as:
 
 where `XXXX` is any version name / number you like, for ex. `pn123` for a Jira ticket PN-123, and `demo` is the environment file to use.
 
-To reclaim disk space used by old garbage containers and images run from time to time this command: `docker system prune -f`. It might remove something useful which you do not expect, so first, please, make sure you know what this command is doing.
+When you need to deploy master version, run this:
+
+    ./deploy.sh test-machine production master
 
 If the deploy script run successfully test the variant with:
 
     export TEST_MACHINE_IP=$(docker-machine ip test-machine)
+    # for production / master
     curl -i -H 'Host: www.example.com' http://$TEST_MACHINE_IP/
+    # for demo / pn123
+    curl -i -H 'Host: pn123.demo.example.com' http://$TEST_MACHINE_IP/
 
 If you do not want to use the `TEST_MACHINE_IP` variable every time and also would like to test you App in browser (for whatever reason) just add the IP to your `/etc/hosts` like this:
 
-    192.168.99.100 example.com www.example.com pn123.example.com
+    192.168.99.100 example.com www.example.com pn123.demo.example.com
+
+To reclaim disk space used by old garbage containers and images run from time to time this command: `docker system prune -f`. It might remove something useful which you do not expect, so first, please, make sure you know what this command is doing.
 
 
 
