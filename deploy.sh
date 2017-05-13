@@ -15,7 +15,8 @@ if [ -z "$DEPLOYMENT_ENV" ]; then
   exit 11
 fi
 
-# The deployment variant name which will be the host name, should start with "v"
+# The deployment variant name which will be the host name,
+# should start with "v" or equal "master" (the main version)
 export DIRECTOR_VARIANT=$3
 if [ -z "$DIRECTOR_VARIANT" ]; then
   echo Define DIRECTOR_VARIANT
