@@ -9,7 +9,9 @@ const client = redis.createClient('redis://redis');
 
 const app = express();
 app.get('/', function (req, res) {
-  res.send(process.env.NOT_A_SECRET + ' world!');
+  client.incr('counter', function(err, reply) {
+    res.send(process.env.NOT_A_SECRET + ' world #' + reply +'!');
+  });
 });
 
 app.listen(PORT);

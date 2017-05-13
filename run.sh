@@ -17,4 +17,4 @@ export DEPLOY_BUILD="${DEPLOY_NS}@123456"
 # To be compatible with deploy.sh
 docker network create director_versions || true
 
-exec docker-compose up --build
+exec docker-compose -f docker-compose.yml -f expose-port-8080.yml up --build

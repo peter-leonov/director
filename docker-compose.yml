@@ -3,7 +3,7 @@ version: '3'
 env_file: ${DEPLOYMENT_ENV}.env
 
 services:
-  # One of the services shoul listen on 80 port
+  # One of the services should listen on 8080 port
   # and has a defined alias on `director_versions` network.
   # In this example configureation it is the `app` service.
   app:
@@ -15,8 +15,6 @@ services:
     # The `-app` suffix is there to share one Docker Hub repository
     # for different services with just tags. Saves money for small teams :)
     image: ${DOCKER_USER}/versions:${DEPLOY_NS}-app
-    ports:
-      - '80:8080'
     depends_on:
       - redis
     networks:
