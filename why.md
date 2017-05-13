@@ -1,10 +1,4 @@
----
-title: "Docker based A/B testing and demo servers"
-description: "A/B testing with Blue-Green Deployment"
-categories: [backend, docker, git]
-layout: post
-lang: en
----
+# Docker based A/B testing and demo servers
 
 TL;DR: A sample project ready to get deployed (with descriptive REAMDE): [github.com/peter-leonov/director](https://github.com/peter-leonov/director)
 
