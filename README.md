@@ -48,6 +48,11 @@ where `XXXX` is any version name / number you like, for ex. `v123` for a Jira ti
 To raclaim disk space used by old garbage containers and images run from time to time this command: `docker system prune -f`. It might remove something useful which you do not expect, so first, please, make sure you know what this command is doing.
 
 
+# Debug
+
+If you want to just run Compose locally w/o separating building / pushing / running, then start you app on a local Docker daemon using command `./run.sh demo`. This will run everything on your machine with stub environment varables.
+
+
 
 # Fin!
 
