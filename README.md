@@ -43,7 +43,7 @@ As simple as:
 
     ./deploy.sh test-machine demo vXXXX
 
-where `XXXX` is any version name / number you like, for ex. `v123` for a Jira ticket PN-123.
+where `XXXX` is any version name / number you like, for ex. `v123` for a Jira ticket PN-123, and `demo` is the environment file to use.
 
 To raclaim disk space used by old garbage containers and images run from time to time this command: `docker system prune -f`. It might remove something useful which you do not expect, so first, please, make sure you know what this command is doing.
 
