@@ -41,15 +41,15 @@ First one (on port `90`) should redirect you to `https://%IP%` and second one (o
 
 As simple as:
 
-    ./deploy.sh test-machine demo XXXX
+    ./deploy.sh test-machine demo pn123
 
-where `XXXX` is any version name / number you like, for ex. `pn123` for a Jira ticket PN-123, and `demo` is the environment file to use.
+where `pn123` is any version name / number you like, for ex. `pn123` stands for a Jira ticket PN-123, and `demo` is the environment file to use.
 
 When you need to deploy master version, run this:
 
     ./deploy.sh test-machine production master
 
-If the deploy script run successfully test the variant with:
+If the deploy script run successfully both times test the variant and production with:
 
     export TEST_MACHINE_IP=$(docker-machine ip test-machine)
     # for production / master
@@ -57,7 +57,7 @@ If the deploy script run successfully test the variant with:
     # for demo / pn123
     curl -i -H 'Host: pn123.demo.example.com' http://$TEST_MACHINE_IP/
 
-The idea of this whole project is that you now can run both `production` and `pn123` simultaneously. Or more, if you machine / swarm permits.
+The idea of this whole project is that you now can run both `production` and `pn123` simultaneously. Or more, if you machine / swarm permits. It is also possible to deploy different branches, just check out the branch first and run `./deploy.sh`.
 
 If you do not want to use the `TEST_MACHINE_IP` variable every time and also would like to test you App in browser (for whatever reason) just add the IP to your `/etc/hosts` like this:
 
